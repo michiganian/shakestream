@@ -78,47 +78,47 @@ One day I really should make time and reach out to the Shake folks and see if th
 
 ## How To
 ### Step 1	Configure the shake to send a UDP stream to your server.
-	<ul>See https://manual.raspberryshake.org/udp.html
+    See https://manual.raspberryshake.org/udp.html
 
-	Example
-	 /opt/settings/user/UDP-data-streams.conf
-	{
-		"UDP-destinations" : [
-			{ "dest" : "UDP-1"}
-		],
-		"UDP-1" : {
-			"Hostname" : "10.10.10.10",
-			"Port" : "8889"
-		}
-	}
-	
-	If using a port other than 8889, edit this line in seismo.py to use the same port.  
-	sock_rec.bind(('', 8889))</ul>
-	
+    Example
+     /opt/settings/user/UDP-data-streams.conf
+    {
+        "UDP-destinations" : [
+            { "dest" : "UDP-1"}
+        ],
+        "UDP-1" : {
+            "Hostname" : "10.10.10.10",
+            "Port" : "8889"
+        }
+    }
+    
+    If using a port other than 8889, edit this line in seismo.py to use the same port.  
+    sock_rec.bind(('', 8889))</ul>
+
 ### Step 2 Get the python script running
-	<ul>Choose a port for the websocket server  
-	Edit seismo.py, replacing WEBSOCKETPORT with the port number  
-	Optionally, replace 0.0.0.0 with the IP address of the websocket server  
-	Also optionally set the UDP bind IP and port in seismo.py  
-	&nbsp;&nbsp;sock_rec.bind(('IPADDRESS', 8889))  
-	Run seismo.py manually or build and run the container  
-	I realize I'm presuming the reader has knowledge of how to run this as a background process or build and run a container.  
-	I'm running it in a rootless podman container</ul>
+    Choose a port for the websocket server  
+    Edit seismo.py, replacing WEBSOCKETPORT with the port number  
+    Optionally, replace 0.0.0.0 with the IP address of the websocket server  
+    Also optionally set the UDP bind IP and port in seismo.py  
+    &nbsp;&nbsp;sock_rec.bind(('IPADDRESS', 8889))  
+    Run seismo.py manually or build and run the container  
+    I realize I'm presuming the reader has knowledge of how to run this as a background process or build and run a container.  
+    I'm running it in a rootless podman container</ul>
 
 ### Step 3 Setup the http server
-	<ul>Prepare shake.html and download d3.js  
-	Edit shake.html, setting the websocket server IP and port  
-	Look for this line  
-	var shakedat = new WebSocket("ws://WEBSOCKETIPADDRESS:WEBSOCKETPORT");  
-	Replace WEBSOCKETIPADDRESS with your web server's name or ip.  
-	Replace WEBSOCKETPORT with the same port that was set in seismo.py  
-	  
-	Get a copy of d3.v7.min.js https://d3js.org/d3.v7.min.js  
-	Set up an http server to serve shake.html and d3.v7.min.js from the same directory  
-	Another option is to place the html and js file under /usr/src/fe in the rfe container on the shake</ul>
+    <ul>Prepare shake.html and download d3.js  
+    Edit shake.html, setting the websocket server IP and port  
+    Look for this line  
+    var shakedat = new WebSocket("ws://WEBSOCKETIPADDRESS:WEBSOCKETPORT");  
+    Replace WEBSOCKETIPADDRESS with your web server's name or ip.  
+    Replace WEBSOCKETPORT with the same port that was set in seismo.py  
+      
+    Get a copy of d3.v7.min.js https://d3js.org/d3.v7.min.js  
+    Set up an http server to serve shake.html and d3.v7.min.js from the same directory  
+    Another option is to place the html and js file under /usr/src/fe in the rfe container on the shake</ul>
 
 ### Step 4 Enjoy
-	<ul>Open a browser to http://[YourWebserver]/shake.html</ul>
+    <ul>Open a browser to http://[YourWebserver]/shake.html</ul>
 
 # Screenshots
 3.9 Ontario CA Sep 7 2024, about 50 miles away
