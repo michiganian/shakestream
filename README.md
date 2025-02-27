@@ -93,7 +93,7 @@ One day I really should make time and reach out to the Shake folks and see if th
     }
     
     If using a port other than 8889, edit this line in seismo.py to use the same port.  
-    sock_rec.bind(('', 8889))</ul>
+    sock_rec.bind(('', 8889))
 
 ### Step 2 Get the python script running
     Choose a port for the websocket server  
@@ -103,10 +103,10 @@ One day I really should make time and reach out to the Shake folks and see if th
     &nbsp;&nbsp;sock_rec.bind(('IPADDRESS', 8889))  
     Run seismo.py manually or build and run the container  
     I realize I'm presuming the reader has knowledge of how to run this as a background process or build and run a container.  
-    I'm running it in a rootless podman container</ul>
+    I'm running it in a rootless podman container
 
 ### Step 3 Setup the http server
-    <ul>Prepare shake.html and download d3.js  
+    Prepare shake.html and download d3.js  
     Edit shake.html, setting the websocket server IP and port  
     Look for this line  
     var shakedat = new WebSocket("ws://WEBSOCKETIPADDRESS:WEBSOCKETPORT");  
@@ -115,10 +115,10 @@ One day I really should make time and reach out to the Shake folks and see if th
       
     Get a copy of d3.v7.min.js https://d3js.org/d3.v7.min.js  
     Set up an http server to serve shake.html and d3.v7.min.js from the same directory  
-    Another option is to place the html and js file under /usr/src/fe in the rfe container on the shake</ul>
+    Another option is to place the html and js file under /usr/src/fe in the rfe container on the shake
 
 ### Step 4 Enjoy
-    <ul>Open a browser to http://[YourWebserver]/shake.html</ul>
+    Open a browser to http://[YourWebserver]/shake.html
 
 # Screenshots
 3.9 Ontario CA Sep 7 2024, about 50 miles away
