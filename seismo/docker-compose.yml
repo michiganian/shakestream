@@ -1,0 +1,10 @@
+version: '2'
+
+# docker build -t local/seismo:v1.001
+# change the image name if built with a different name
+services:
+  alpineshake:
+    image: local/seismo:v1.001
+    restart: unless-stopped
+    network_mode: "host"
+
