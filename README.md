@@ -5,11 +5,11 @@ Select any of the four sensors
 Light or dark mode  
 
 ### Requires a server that can do these things:
-- Run seismo.py
-		Receives the shake's UDP data
-		Serves the processed shake data to a browser over websocket
-- Run a basic webserver
-		Serve shake.html and d3.v7.min.js https://d3js.org/d3.v7.min.js
+- Run seismo.py  
+		Receives the shake's UDP data  
+		Serves the processed shake data to a browser over websocket  
+- Run a basic webserver  
+		Serve shake.html and d3.v7.min.js https://d3js.org/d3.v7.min.js  
 
 Five graph lines are displayed.  
 The first line is a live stream with 60 seconds of data.  
